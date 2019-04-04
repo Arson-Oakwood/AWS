@@ -4,6 +4,7 @@ while True:
     k = 0
     p = []
     s = []
+    print('Enter your folder path')
     i = input()
     f = os.listdir(i)
     if i.split('\\')[-1]+'.json' in os.listdir(cwd):
