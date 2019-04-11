@@ -20,7 +20,8 @@ if sys.version_info[0] < 3:
         with open(jsonfile) as file:
             oldfile = json.load(file)
     pathlist = repr([x.encode(sys.stdout.encoding) for x in os.listdir(path)]).decode('string-escape')
-    cwdlist = repr([x.encode(sys.stdout.encoding) for x in os.listdir(os.getcwd().decode('utf-8'))]).decode('string-escape')
+    cwdlist = repr([x.encode(sys.stdout.encoding) for x in os.listdir(os.getcwd().decode('utf-8'))])\
+                   .decode('string-escape')
 else:
     if jsonfile in os.listdir(os.getcwd()):
         with open(jsonfile) as file:
@@ -42,8 +43,8 @@ if oldfile is not None:
     print(created)
 if sys.version_info[0] < 3:
     pathlist = repr([x.encode(sys.stdout.encoding) for x in os.listdir(path)]).decode('string-escape')
-    cwdlist = repr([x.encode(sys.stdout.encoding) for x in os.listdir(os.getcwd().decode('utf-8'))]).decode(
-        'string-escape')
+    cwdlist = repr([x.encode(sys.stdout.encoding) for x in os.listdir(os.getcwd().decode('utf-8'))])\
+                   .decode('string-escape')
 else:
     pathlist = os.listdir(path)
     cwdlist = os.listdir(os.getcwd())
